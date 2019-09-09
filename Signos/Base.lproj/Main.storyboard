@@ -48,16 +48,24 @@
                                     <outlet property="delegate" destination="kdA-LC-K2I" id="GJA-uD-Qzi"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZG-iQ-ePE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="172"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FtR-nt-11j" firstAttribute="top" secondItem="kZG-iQ-ePE" secondAttribute="bottom" constant="8" id="4UB-XU-PAa"/>
+                            <constraint firstItem="kZG-iQ-ePE" firstAttribute="top" secondItem="z5a-z6-pe9" secondAttribute="top" id="aHE-xv-Gjj"/>
                             <constraint firstItem="FtR-nt-11j" firstAttribute="top" secondItem="z5a-z6-pe9" secondAttribute="top" constant="180" id="byb-6T-FtU"/>
                             <constraint firstItem="FtR-nt-11j" firstAttribute="bottom" secondItem="z5a-z6-pe9" secondAttribute="bottom" id="fMB-De-GKc"/>
+                            <constraint firstItem="z5a-z6-pe9" firstAttribute="trailing" secondItem="kZG-iQ-ePE" secondAttribute="trailing" id="kDD-9o-KZl"/>
+                            <constraint firstItem="kZG-iQ-ePE" firstAttribute="leading" secondItem="z5a-z6-pe9" secondAttribute="leading" id="uhe-xj-cPh"/>
                             <constraint firstItem="FtR-nt-11j" firstAttribute="leading" secondItem="z5a-z6-pe9" secondAttribute="leading" id="xba-oX-ySa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z5a-z6-pe9"/>
                     </view>
                     <connections>
+                        <outlet property="imageLogo" destination="kZG-iQ-ePE" id="RZX-xw-mpv"/>
                         <outlet property="tableView" destination="FtR-nt-11j" id="bHD-fI-ayo"/>
                     </connections>
                 </viewController>

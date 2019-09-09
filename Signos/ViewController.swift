@@ -4,10 +4,13 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
+    //MASK: Outlet
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageLogo.image = UIImage(named: "signos")
         setupTable()
     }
     
@@ -22,6 +25,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     //aqui modificamos a cell em cada linha
     //modificações e tudo que precisamos
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //tem que identificar a cell no storyboad, clicando na cell e indo Table View Cell e identifier colocando o nome
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
        cell.backgroundColor = .red
         return cell
@@ -33,9 +37,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-    //MASK: Outra Parte
-    
 
 }
 
