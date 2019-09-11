@@ -2,49 +2,29 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 
-    //MASK: Outlet
+    //MARK: Outlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageLogo: UIImageView!
     
+    //variaveis
     var contentSignos = dateContent()
+    let name = "name"
+    let meanging = "meanging"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageLogo.image = UIImage(named: "signos")
-        setupTable()
     }
     
-    //MASK: Inicial
-    //É obrigatório ter esses dois comando quando usa delegate e o data source da table view, number of rows in section e cell for row at
     
-    //números de linhas em uma seção
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contentSignos.count
-    }
-    
-    //aqui modificamos a cell em cada linha
-    //modificações e tudo que precisamos
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //tem que identificar a cell no storyboad, clicando na cell e indo Table View Cell e identifier colocando o nome
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let dateContentSignos = contentSignos[indexPath.row]
-        let name = "name"
-        let meaging = "meaging"
-        
-        cell.textLabel?.text = getContent(ofSignos: dateContentSignos, whatKey: name)
-        cell.backgroundColor = .red
-    
-        return cell
-    }
-    
-    // é necessário dizer que table view pegará da própria view o delegate e data source
-    // lembrando que temos que colocar o delegate e data source na view controller no storyboard, usando o control e setando no quadradinho amarelo, vai aparecer, é só colocar
-    fileprivate func setupTable() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-
 }
 
+// é necessário dizer que table view pegará da própria view o delegate e data source
+// lembrando que temos que colocar o delegate e data source na view controller no storyboard, usando o control e setando no quadradinho amarelo, vai aparecer, é só colocar
+//não é necessário quando colocamos direto no story board
+//    fileprivate func setupTable() {
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//    }
