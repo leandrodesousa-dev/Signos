@@ -8,6 +8,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageLogo: UIImageView!
     
+    var contentSignos = dateContent()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageLogo.image = UIImage(named: "signos")
@@ -19,7 +21,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     //números de linhas em uma seção
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return contentSignos.count
     }
     
     //aqui modificamos a cell em cada linha
@@ -27,7 +29,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //tem que identificar a cell no storyboad, clicando na cell e indo Table View Cell e identifier colocando o nome
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-       cell.backgroundColor = .red
+        let dateContentSignos = contentSignos[indexPath.row]
+        let name = "name"
+        let meaging = "meaging"
+        
+        cell.textLabel?.text = getContent(ofSignos: dateContentSignos, whatKey: name)
+        cell.backgroundColor = .red
+    
         return cell
     }
     
