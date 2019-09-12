@@ -14,6 +14,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     //MARK: Inicial
     //É obrigatório ter esses dois comando quando usa delegate e o data source da table view, number of rows in section e cell for row at
     
+    //números de seções que teremos
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     //números de linhas em uma seção
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentSignos.count
