@@ -39,6 +39,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //faz animação quando selecionar a linha
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         //criacao do alert, usando alert controller para o corpo do alert e alert action para botões de cancelar, confirmar e etc
         //usei present porque o alert controller é uma filha da UIViewController
         let dateContentSignos = contentSignos[indexPath.row]
