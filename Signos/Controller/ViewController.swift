@@ -15,9 +15,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageLogo.image = UIImage(named: "signos")
+        setupImageLogo()
     }
     
+    fileprivate func setupImageLogo() {
+        imageLogo.image = UIImage(named: "signos")
+        imageLogo.contentMode = .scaleAspectFit
+        imageLogo.backgroundColor = UIColor(red: 196, green: 211, blue: 223)
+    }
     
 }
 
